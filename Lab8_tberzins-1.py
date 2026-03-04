@@ -17,15 +17,16 @@ def find_UPC(upc_input: str):
         input_digit = int(upc_input[i])     
 #Checking if digit is at an odd or even position, note odds are actually evens in context of the actual UPC number because index starts at zero rather than 1 
         if(i%2 ==0):
-            total += input_digit
+            total += (input_digit*3)
             
         else:
-            total += (input_digit*3)
+            total += input_digit
           
         i +=1 
     
     #Calculating the expected last digit and returning it
     result_modulo: int = total%10
+    print(result_modulo)
     result: int = 10 - result_modulo
     print(f"The expected check digit is {result}.\n")
     return result
@@ -33,7 +34,7 @@ def find_UPC(upc_input: str):
 
         
 #If statement to write output depending if last digit is valid or not
-if find_UPC(upc_input) == upc_number[-1]:
+if find_UPC(upc_input) == int(upc_number[-1]):
     print("UPC is VALID")
 else:
     print("UPC is INVALID")
