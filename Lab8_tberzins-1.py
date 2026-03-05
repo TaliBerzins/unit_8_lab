@@ -9,6 +9,16 @@ print(f'The first 11 digits are {upc_input}.')
 print(f'The provided check digit is {upc_number[-1]}.\n')
 
 #Defining function to check expected check digit
+"""Takes a 12 digit UPC and verifies the last degit to check if UPC is valid
+
+Args: 
+     upc_input: the 12 digit UPC provided by the user minus the 12th digit
+     
+     
+     
+     Returns:
+        int: result: the expected 12th digit based on the algorithm
+        """
 def find_UPC(upc_input: str):
     print("Calculating...")
     total = 0
